@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   const [items, setItems] = useState([]);
   const [showData, setShowData]=useState(true);
-
+const i=[1,2,3,4,5];
   useEffect(() => {
     setTimeout(()=>{
       setShowData(false)
@@ -29,8 +29,23 @@ function App() {
     <div>
       {showData?
       (
-        <div style={{width: 500}}>
-          <Skeleton />
+        <div>
+
+<div>{i?.map((it) => (
+        <div key={it.id}>
+          <Space className='card' direction="vertical" size={16}>
+    <Card
+      // title="Item:"
+      style={{
+        alignItems:"center",
+        width: 300,
+      }}
+    >
+       <Skeleton />
+    </Card>
+    </Space>
+       </div>
+      ))}</div>
         </div>
       ):
       <div>{items?.map((item) => (
@@ -40,7 +55,6 @@ function App() {
           <Space className='card' direction="vertical" size={16}>
     <Card
       title="Item:"
-      // extra={<a href="#">More</a>}
       style={{
         width: 300,
       }}

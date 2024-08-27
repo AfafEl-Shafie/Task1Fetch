@@ -1,8 +1,9 @@
 body{
-    background-color: rgb(58, 52, 71);
+    background-color: rgba(19, 2, 54);
 }
 .card{
     display: flex;
     align-items: center;
     margin-top: 10px;
+    justify-content: center;
 }
